@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Tourism Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8fb;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.login-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #00bcd4, #0078a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: rgb(175, 212, 253);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px;
+}
+
+.login-container h1 {
+    color: #0078a0;
+}
+
+.login-container input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+.login-container button {
+    background-color: #0abaf5;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #19cbfc;
+}
+
+
+.plan-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #77a6ff, #0078a0);
+    color: white;
+    text-align: center;
+}
+
+.plan-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.plan-container input {
+    padding: 10px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.plan-container button {
+    background-color: #fff;
+    color: #0078a0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.plan-container button:hover {
+    background-color: #04e0fd;
+}
+
+header {
+    background-color: #0078a0;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.places-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+.place-card {
+    background-color: rgb(92, 195, 255);
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+    transform: scale(1.03);
+}
+
+.place-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.place-card h3 {
+    color: #0078a0;
+}
+
+footer {
+    text-align: center;
+    background-color: #06b1eb;
+    color: white;
+    padding: 15px;
+}
+.createacc{
+    text-align: center;
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+
+<body>
+
+    
+    <section id="login-section" class="login-section">
+        <div class="login-container">
+            <h1>Welcome to Hassan Tourism</h1>
+            <p>Login to start planning your trip</p>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p class="createacc">Create Account.</p>
+        </div>
+    </section>
+
+    
+    <section id="days-section" class="hidden plan-section">
+        <div class="plan-container">
+            <h1>Plan Your Trip</h1>
+            <p>Tell us how many days you’ll stay in Hassan District</p>
+            <form id="daysForm">
+                <label for="days">How many days will you visit Hassan?</label>
+                <input type="number" id="days" min="1" max="30" placeholder="Enter number of days" required>
+                <button type="submit">Next</button>
+            </form>
+        </div>
+    </section>
+
+
+    <section id="places-section" class="hidden">
+        <header>
+            <h1>Top Tourist Attractions in Hassan</h1>
+            <p id="trip-plan-message"></p>
+        </header>
+
+        <div class="places-container">
+            
+            <div class="place-card">
+                
+                <h3>1. Belur - Chennakesava Temple</h3>
+                <p>Masterpiece of Hoysala architecture with exquisite carvings.</p>
+                <p><b>📍 Location:</b> Belur</p>
+                <p><b>📞 Contact:</b> +91 81234 56789</p>
+            </div>
+
+            <div class="place-card">
+                
+                <h3>2. Halebidu - Hoysaleswara Temple</h3>
+                <p>Famous for its twin temples and detailed sculptures of Lord Shiva.</p>
+                <p><b>📍 Location:</b> Halebidu</p>
+                <p><b>📞 Contact:</b> +91 99876 54321</p>
+            </div>
+
+            <div class="place-card">
+                
+                <h3>3. Shravanabelagola</h3>
+                <p>Giant statue of Bahubali, an iconic Jain pilgrimage site.</p>
+                <p><b>📍 Location:</b> Shravanabelagola</p>
+                <p><b>📞 Contact:</b> +91 93456 78901</p>
+            </div>
+
+            <div class="place-card">
+                
+                <h3>4. Manjarabad Fort</h3>
+                <p>Star-shaped fort built by Tipu Sultan, offering panoramic Western Ghats views.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 90012 22334</p>
+            </div>
+
+            <div class="place-card">
+                
+                <h3>5. Gorur Dam (Hemavathi Reservoir)</h3>
+                <p>Scenic water reservoir with picnic spots surrounded by greenery.</p>
+                <p><b>📍 Location:</b> Gorur</p>
+                <p><b>📞 Contact:</b> +91 90321 12234</p>
+            </div>
+
+            <div class="place-card">
+                
+                <h3>6. Bisle Ghat Viewpoint</h3>
+                <p>Beautiful viewpoint in the Western Ghats with lush forests.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 98455 77889</p>
+            </div>
+
+            <div class="place-card">
+                <h3>7. Hasanamba Temple</h3>
+                <p>Ancient temple that opens only once a year, dedicated to Goddess Hasanamba.</p>
+                <p><b>📍 Location:</b> Hassan City</p>
+                <p><b>📞 Contact:</b> +91 94488 11100</p>
+            </div>
+
+            <div class="place-card">
+                <h3>8. Shettihalli Rosary Church</h3>
+                <p>Submerged church ruins that appear during the dry season — a photographer’s paradise.</p>
+                <p><b>📍 Location:</b> Shettihalli</p>
+                <p><b>📞 Contact:</b> +91 90388 12210</p>
+            </div>
+
+            <div class="place-card">
+                <h3>9. Sakleshpur Coffee Estates</h3>
+                <p>Rolling hills of coffee plantations offering homestays and hiking trails.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 97645 33422</p>
+            </div>
+
+            <div class="place-card">
+                <h3>10. Hemavathi River Bank</h3>
+                <p>Peaceful riverside area perfect for evening relaxation and nature photography.</p>
+                <p><b>📍 Location:</b> Gorur</p>
+                <p><b>📞 Contact:</b> +91 98123 55678</p>
+            </div>
+
+            <div class="place-card">
+                <h3>11. Bisle Forest Reserve</h3>
+                <p>Dense forest region rich in wildlife and natural beauty.</p>
+                <p><b>📍 Location:</b> Bisle</p>
+                <p><b>📞 Contact:</b> +91 70000 98765</p>
+            </div>
+
+            <div class="place-card">
+                <h3>12. Maranahalli Waterfalls</h3>
+                <p>Hidden gem near Sakleshpur offering a peaceful waterfall experience.</p>
+                <p><b>📍 Location:</b> Maranahalli</p>
+                <p><b>📞 Contact:</b> +91 91234 87654</p>
+            </div>
+
+            <div class="place-card">
+                <h3>13. Jenukal Gudda Viewpoint</h3>
+                <p>Highest peak in Hassan with mesmerizing panoramic views.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 90009 90909</p>
+            </div>
+
+            <div class="place-card">
+                <h3>14. Mallalli Falls</h3>
+                <p>Magnificent waterfall nestled in the Western Ghats near Sakleshpur.</p>
+                <p><b>📍 Location:</b> Somwarpet</p>
+                <p><b>📞 Contact:</b> +91 94333 56789</p>
+            </div>
+
+            <div class="place-card">
+                <h3>15. Temple of Lakshmi Narasimha</h3>
+                <p>Hoysala-era temple famous for its fine architectural beauty.</p>
+                <p><b>📍 Location:</b> Nuggehalli</p>
+                <p><b>📞 Contact:</b> +91 98876 44221</p>
+            </div>
+
+            <div class="place-card">
+                <h3>16. Maharaja Park</h3>
+                <p>Popular park in Hassan city — perfect for families and evening strolls.</p>
+                <p><b>📍 Location:</b> Hassan City</p>
+                <p><b>📞 Contact:</b> +91 93400 76543</p>
+            </div>
+
+            <div class="place-card">
+                <h3>17. Bettada Byraveshwara Temple</h3>
+                <p>Hilltop temple surrounded by breathtaking landscapes.</p>
+                <p><b>📍 Location:</b> Agrahara Belur</p>
+                <p><b>📞 Contact:</b> +91 99889 22334</p>
+            </div>
+
+            <div class="place-card">
+                <h3>18. Jenukallu Gudda Sunset Point</h3>
+                <p>Stunning location to watch sunsets over lush green valleys.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 99443 77890</p>
+            </div>
+
+            <div class="place-card">
+                <h3>19. Pandavar Gudda</h3>
+                <p>Mythological hill associated with the Pandavas — great for trekking.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 91222 33211</p>
+            </div>
+
+            <div class="place-card">
+                <h3>20. Manjehalli Waterfalls</h3>
+                <p>Small but scenic waterfall near coffee plantations.</p>
+                <p><b>📍 Location:</b> Sakleshpur</p>
+                <p><b>📞 Contact:</b> +91 97488 44321</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Developed by Information Science Students MCE Under The guidance of Mr.Krishna Swaroop.</p>
+            <P>Official Patner Malnad College Of Engineering. </P>
+            <p>© 2025 Hassan Tourism | Enjoy your trip!</p>
+        </footer>
+    </section>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginSection = document.getElementById('login-section');
+        const daysSection = document.getElementById('days-section');
+        const daysForm = document.getElementById('daysForm');
+        const placesSection = document.getElementById('places-section');
+        const tripMessage = document.getElementById('trip-plan-message');
+
+        
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            loginSection.style.display = "none";
+            daysSection.classList.remove("hidden");
+        });
+
+        
+        daysForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const days = document.getElementById('days').value;
+            tripMessage.textContent = `You have planned a ${days}-day trip to Hassan. Here are the best 20 places to explore!`;
+            daysSection.style.display = "none";
+            placesSection.classList.remove("hidden");
+            window.scrollTo(0, 0);
+        });
+    </script>
+
+</body>
+
+</html>
